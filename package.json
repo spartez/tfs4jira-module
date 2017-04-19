@@ -1,5 +1,5 @@
 {
-  "name": "tfs4jira-module",
+  "name": "@spartez/tfs4jira-module",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "build": "webpack -p",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
