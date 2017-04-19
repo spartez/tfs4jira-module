@@ -1,5 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { capitalize } from './actions';
 
-export default function (props) {
-    return <div>{props.data.foo}</div>;
+function Foobar({ foo, dispatch }) {
+
+    function change() {
+        dispatch(capitalize(foo));
+    }
+
+    return (
+        <section>
+            <h1>{ foo }</h1>
+            <button onClick={ change }>capitalize</button>
+        </section>
+    );
 }
+
+export default connect(props => props)(Foobar);
