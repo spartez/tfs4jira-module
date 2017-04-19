@@ -1,9 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import List from './list';
+import Foobar from './foobar';
+
+const container = document.getElementById('tfs4jira__foobar');
+const data = JSON.parse(container.getAttribute('data-foobar'));
 
 render(
-    <List />,
-    document.getElementById('root')
+    <Foobar data={ data } />,
+    container
 );
