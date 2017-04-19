@@ -2,7 +2,7 @@
   "name": "tfs4jira-module",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,7 +21,9 @@
     "babel-loader": "^6.4.1",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "eslint": "^3.19.0",
     "eslint-config-spartez": "^1.4.0",
+    "eslint-plugin-react": "^6.10.3",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.2"
   },
