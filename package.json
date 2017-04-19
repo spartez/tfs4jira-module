@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "ava --verbose",
     "lint": "eslint .",
     "build": "webpack -p",
     "dev": "webpack-dev-server",
@@ -21,13 +21,17 @@
   },
   "homepage": "https://github.com/spartez/tfs4jira-module#readme",
   "devDependencies": {
+    "ava": "^0.19.1",
     "babel-cli": "^6.24.1",
     "babel-loader": "^6.4.1",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "enzyme": "^2.8.2",
     "eslint": "^3.19.0",
     "eslint-config-spartez": "^1.4.0",
     "eslint-plugin-react": "^6.10.3",
+    "react-addons-test-utils": "^15.5.1",
+    "redux-mock-store": "^1.2.3",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.2"
   },
@@ -36,5 +40,26 @@
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "redux": "^3.6.0"
+  },
+  "ava": {
+    "files": [
+      "src/**/*test.js"
+    ],
+    "source": [
+      "src/**/*.js"
+    ],
+    "require": [
+      "babel-register",
+      "./jsdom-setup"
+    ],
+    "concurrency": 5,
+    "failFast": false,
+    "powerAssert": true,
+    "babel": {
+      "babelrc": true,
+      "presets": [
+        "stage-2"
+      ]
+    }
   }
 }
