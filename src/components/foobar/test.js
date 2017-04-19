@@ -1,17 +1,18 @@
 import test from 'ava';
+import sinon from 'sinon';
 import React from 'react';
 import { mount } from 'enzyme';
-import mockStore from 'redux-mock-store';
 
-import Foobar from './';
+import { Foobar } from './';
 
 test('should capitalize foo', t => {
-    const store = mockStore()({ foo: 'bar' });
-    const wrapper = mount(<Foobar store={ store } />);
+    const props = { foo: 'spartez', dispatch: sinon.spy() };
+    const wrapper = mount(<Foobar { ...props } />);
 
     wrapper.find('button').simulate('click');
-    // console.log(wrapper.find('h1').html());
-    // expect(wrapper.find(Foo)).to.have.length(3);
-    console.log(wrapper.find('h1').html());
-    t.pass();
+
+    t.true(props.dispatch.calledWith({
+        foo: 'SPARTEZ',
+        type: 'CAPITALIZE'
+    }));
 });

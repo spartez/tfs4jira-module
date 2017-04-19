@@ -5,7 +5,6 @@ import { capitalize } from '../../actions/actions';
 export function Foobar({ foo, dispatch }) {
 
     function change() {
-        console.log('click!');
         dispatch(capitalize(foo));
     }
 
