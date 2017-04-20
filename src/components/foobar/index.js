@@ -3,7 +3,14 @@ import { connect } from 'react-redux';
 import { capitalizeFoo, fetchBar } from '../../actions/actions';
 import { Loader } from '../loader/';
 
-export function Foobar({ foo, bar, barInProgress, dispatch }) {
+const style = {
+    error: {
+        color: 'red',
+        'font-weight': 'bold'
+    }
+};
+
+export function Foobar({ foo, bar, barInProgress, error, dispatch }) {
 
     return (
         <section>
@@ -20,11 +27,14 @@ export function Foobar({ foo, bar, barInProgress, dispatch }) {
                     : bar
                 }
             </h2>
+            { error &&
+                <div style={ style.error }>
+                    fetching foo has failed!
+                </div>
+            }
             <button onClick={ () => dispatch(fetchBar()) }>
                 get bar from server
             </button>
-
-
 
         </section>
     );
