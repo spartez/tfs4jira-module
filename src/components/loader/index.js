@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './loader.pcss';
+import style from './style.pcss';
 
 export function Loader () {
     return (

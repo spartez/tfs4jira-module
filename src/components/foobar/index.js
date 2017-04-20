@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { capitalizeFoo, fetchBar } from '../../actions/actions';
 import { Loader } from '../loader/';
-import style from './foobar.pcss';
+import style from './style.pcss';
 
 export function Foobar({ foo, bar, barInProgress, error, dispatch }) {
 

@@ -30,8 +30,8 @@ module.exports = {
                     importLoaders: 1,
                     modules: true,
                     localIdentName: isDevMode()
-                        ? '[path]__[local]___[hash:base64:5]'
-                        : '[hash:base64:10]'
+                        ? '[path][name]__[local]___[hash:base64:5]'
+                        : '[hash:base64:15]'
                 }
             }, {
                 loader: 'postcss-loader',
