@@ -1,5 +1,9 @@
 const path = require('path');
 
+function isDevMode() {
+    return process.env.NODE_ENV === 'development';
+}
+
 module.exports = {
     entry: {
         index: './src/index.js'
@@ -18,19 +22,23 @@ module.exports = {
             }]
         }, {
             test: /\.pcss$/,
-            use: [
-                'style-loader',
-                {
-                    loader: 'css-loader?sourceMap',
-                    options: {
-                        importLoaders: 1,
-                        modules: true,
-                        sourceMap: true,
-                        localIdentName: '[name]__[local]--[hash:base64:5]'
-                    }
-                },
-                'postcss-loader'
-            ]
+            use: [{
+                loader: 'style-loader'
+            }, {
+                loader: 'css-loader?sourceMap',
+                options: {
+                    importLoaders: 1,
+                    modules: true,
+                    localIdentName: isDevMode()
+                        ? '[path]__[local]___[hash:base64:5]'
+                        : '[hash:base64:10]'
+                }
+            }, {
+                loader: 'postcss-loader',
+                options: {
+                    sourceMap: isDevMode() ? 'inline' : false
+                }
+            }]
         }]
     },
     devtool: 'source-map'
