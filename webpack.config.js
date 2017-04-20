@@ -16,6 +16,21 @@ module.exports = {
             use: [{
                 loader: 'babel-loader'
             }]
+        }, {
+            test: /\.pcss$/,
+            use: [
+                'style-loader',
+                {
+                    loader: 'css-loader?sourceMap',
+                    options: {
+                        importLoaders: 1,
+                        modules: true,
+                        sourceMap: true,
+                        localIdentName: '[name]__[local]--[hash:base64:5]'
+                    }
+                },
+                'postcss-loader'
+            ]
         }]
     },
     devtool: 'source-map'
