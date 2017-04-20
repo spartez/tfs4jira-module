@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { capitalize } from 'actions/actions';
+import { capitalize } from '../../actions/actions';
 
-function Foobar({ foo, dispatch }) {
+export function Foobar({ foo, dispatch }) {
 
     function change() {
         dispatch(capitalize(foo));
