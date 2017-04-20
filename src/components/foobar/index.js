@@ -2,13 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { capitalizeFoo, fetchBar } from '../../actions/actions';
 import { Loader } from '../loader/';
-
-const style = {
-    error: {
-        color: 'red',
-        'font-weight': 'bold'
-    }
-};
+import style from './style.pcss';
 
 export function Foobar({ foo, bar, barInProgress, error, dispatch }) {
 
@@ -28,7 +22,7 @@ export function Foobar({ foo, bar, barInProgress, error, dispatch }) {
                 }
             </h2>
             { error &&
-                <div style={ style.error }>
+                <div className={ style.error }>
                     fetching foo has failed!
                 </div>
             }
