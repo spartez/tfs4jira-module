@@ -30,6 +30,7 @@
     "eslint": "^3.19.0",
     "eslint-config-spartez": "^1.4.0",
     "eslint-plugin-react": "^6.10.3",
+    "jsdom": "^9.12.0",
     "react-addons-test-utils": "^15.5.1",
     "sinon": "^2.1.0",
     "webpack": "^2.4.1",
@@ -39,7 +40,8 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
   },
   "ava": {
     "files": [

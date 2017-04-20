@@ -1,17 +1,41 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { capitalize } from '../../actions/actions';
+import { capitalizeFoo, fetchBar } from '../../actions/actions';
+import { Loader } from '../loader/';
 
-export function Foobar({ foo, dispatch }) {
-
-    function change() {
-        dispatch(capitalize(foo));
+const style = {
+    error: {
+        color: 'red',
+        'font-weight': 'bold'
     }
+};
+
+export function Foobar({ foo, bar, barInProgress, error, dispatch }) {
 
     return (
         <section>
-            <h1>{ foo }</h1>
-            <button onClick={ change }>capitalize</button>
+
+            <h2>foo: { foo }</h2>
+            <button onClick={ () => dispatch(capitalizeFoo(foo)) }>
+                capitalize foo
+            </button>
+
+            <h2>
+                bar:
+                { barInProgress
+                    ? <Loader />
+                    : bar
+                }
+            </h2>
+            { error &&
+                <div style={ style.error }>
+                    fetching foo has failed!
+                </div>
+            }
+            <button onClick={ () => dispatch(fetchBar()) }>
+                get bar from server
+            </button>
+
         </section>
     );
 }
