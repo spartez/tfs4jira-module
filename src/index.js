@@ -8,7 +8,7 @@ import { name } from '../package.json';
 // this needs to be imported before any other app components
 import 'reset-css/reset.css';
 
-import reducers from './reducers/reducers';
+import reducers from './reducers';
 import Foobar from './components/foobar';
 
 const container = document.getElementById(name);

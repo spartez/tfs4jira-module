@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { capitalizeFoo, fetchBar } from '../../actions/actions';
+import { capitalizeFoo, fetchBar } from '../../actions';
 import { Loader } from '../loader/';
 import style from './style.pcss';
 
@@ -23,7 +23,7 @@ export function Foobar({ foo, bar, barInProgress, error, dispatch }) {
             </h2>
             { error &&
                 <div className={ style.error }>
-                    fetching foo has failed!
+                    fetching bar has failed!
                 </div>
             }
             <button onClick={ () => dispatch(fetchBar()) }>

@@ -1,4 +1,5 @@
 export default function (state = '', action) {
+
     switch (action.type) {
         case 'CAPITALIZE_FOO':
             return Object.assign({}, state, {

@@ -1,3 +1,5 @@
+import 'isomorphic-fetch';
+
 function capitalizeFoo(foo) {
     return {
         type: 'CAPITALIZE_FOO',
@@ -17,7 +19,7 @@ function fetchBar() {
     return function (dispatch) {
         dispatch({ type: 'FETCH_BAR_IN_PROGRESS' });
 
-        fetch('https://www.googleapis.com/books/v1/volumes?q=bar')
+        return fetch('https://www.googleapis.com/books/v1/volumes?q=bar')
             .then(handleErrors)
             .then(response => response.json())
             .then(response => response.items[0].volumeInfo.title)
