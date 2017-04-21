@@ -21,7 +21,7 @@ module.exports = {
                 loader: 'babel-loader'
             }]
         }, {
-            test: /\.pcss$/,
+            test: /\.p?css$/,
             use: [{
                 loader: 'style-loader'
             }, {
