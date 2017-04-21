@@ -1,3 +1,5 @@
+import 'mdn-polyfills/Object.assign';
+
 export default function (state = '', action) {
 
     switch (action.type) {
