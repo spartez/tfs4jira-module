@@ -5,8 +5,9 @@ import { Provider } from 'react-redux';
 import reducers from './reducers/reducers';
 import Foobar from './components/foobar';
 import thunkMiddleware from 'redux-thunk';
+import { name } from '../package.json';
 
-const container = document.getElementById('tfs4jira__foobar');
+const container = document.getElementById(name);
 const data = JSON.parse(container.getAttribute('data-initial'));
 
 const store = createStore(
