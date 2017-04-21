@@ -14,6 +14,18 @@ npm i @spartez/tfs4jira-module
 <div id='@spartez/tfs4jira-module' data-initial='{"foo":"spartez"}'></div>
 <script src='node_modules/@spartez/tfs4jira-module/dist/index.js'></script>
 ```
+# development
+
+```sh
+# install dependencies
+$ npm i
+
+# run dev server (http://localhost:8080/src/runner.html)
+$ npm run dev
+
+# run tests
+$ npm t
+```
 
 # license
 
